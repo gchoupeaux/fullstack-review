@@ -4,6 +4,8 @@ const database = require('../database/index.js');
 var cool = require('cool-ascii-faces');
 let app = express();
 
+app.set('port', (process.env.PORT || 1128));
+
 app.use(express.static(__dirname + '/../client/dist'));
 
 app.post('/repos', function (req, res) {
@@ -53,7 +55,7 @@ app.get('/cool', function(request, response) {
 });
 
 //let port = process.env.PORT || 1128; //`http://localhost:${port}`
-app.set('port', (process.env.PORT || 5000));
+
 
 app.listen(app.get('port'), function(err) {
   if (err) throw err;
