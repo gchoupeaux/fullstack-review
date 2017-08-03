@@ -13,7 +13,7 @@ npm run react-dev
 npm run server-dev 
 
 // mongoose to use javascript to add data to the db
-npm install mongoose
+npm install mongoose // --save ALWAYS to add to dependencies
 
 // start momgo command line interface with the db
 mongo
@@ -36,6 +36,8 @@ Cmd + shift + P
 Package control: install package
 look for babel
 view / syntax / babel
+
+https://stark-hamlet-79950.herokuapp.com/ | https://git.heroku.com/stark-hamlet-79950.git
 
 
 

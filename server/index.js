@@ -1,6 +1,7 @@
 const express = require('express');
 const helpers = require('./../helpers/github.js');
 const database = require('../database/index.js');
+var cool = require('cool-ascii-faces');
 let app = express();
 
 app.use(express.static(__dirname + '/../client/dist'));
@@ -47,9 +48,15 @@ app.get('/repos', function (req, res) {
   
 });
 
-let port = 1128;
+app.get('/cool', function(request, response) {
+  response.send(cool());
+});
 
-app.listen(port, function() {
+let port = process.env.PORT || 1128; //`http://localhost:${port}`
+
+
+app.listen(port, function(err) {
+  if (err) throw err;
   console.log(`listening on port ${port}`);
 });
 
