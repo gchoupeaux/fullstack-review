@@ -52,11 +52,11 @@ app.get('/cool', function(request, response) {
   response.send(cool());
 });
 
-let port = process.env.PORT || 1128; //`http://localhost:${port}`
+//let port = process.env.PORT || 1128; //`http://localhost:${port}`
+app.set('port', (process.env.PORT || 5000));
 
-
-app.listen(port, function(err) {
+app.listen(app.get('port'), function(err) {
   if (err) throw err;
-  console.log(`listening on port ${port}`);
+  //console.log(`listening on port ${port}`);
 });
 
