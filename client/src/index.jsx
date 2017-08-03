@@ -16,26 +16,28 @@ class App extends React.Component {
   search (term) {
     console.log(this);
     console.log(`${term} was searched`);
-    
+    let app = this;
+
     if (term){
       //send a POST request to /repos
       $.post('http://localhost:1128/repos',
       {
         username: term,
-      },
-      function(data, status){
-          console.log("Data: " + data + "\nStatus: " + status);
-      });
+      }
+      // ,
+      // function(data, status){
+      //     console.log("Data: " + data + "\nStatus: " + status);
+          
+      // }
+      ).done(function() {
+        app.get();
+      })
     }
 
   }
 
-  // component will mount
-  // get call
-  // 
-  componentWillMount(){
-
-  let app = this;
+  get(){
+    let app = this;
 
     //send a POST request to /repos
     $.get('http://localhost:1128/repos',
@@ -46,16 +48,20 @@ class App extends React.Component {
       app.setState({
         repos: JSON.parse(data)
       });
-      console.log("Data: " + data + "\nStatus: " + status);
+      //console.log("Data: " + data + "\nStatus: " + status);
     });
+  }
+
+  // component will mount
+  // get call
+  // 
+  componentWillMount(){
+
+    this.get();
 
   }
 
   render () {
-
-    
-    
-
     return (<div>
       <h1>Github Fetcher</h1>
       <RepoList repos={this.state.repos}/>

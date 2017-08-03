@@ -1,0 +1,42 @@
+// cmd for installing the mongo database and running it
+brew update
+brew install mongodb
+mkdir -p /data/db       //create a folder at the root because of '/'
+mongod
+
+// install similar to babel and run it
+npm install -g webpack
+npm install
+npm run react-dev
+
+// start the server
+npm run server-dev 
+
+// mongoose to use javascript to add data to the db
+npm install mongoose
+
+// start momgo command line interface with the db
+mongo
+show dbs
+use fetcher         // show the db called fetcher
+show collections    // show all the collections
+db.repos.find()     // display all the data in the collection called repo
+db.repos.drop()     // delete the db called fetcher
+
+// other
+which brew          // path to brew
+brew -v             // version of brew 
+
+// display client
+127.0.0.1:1128
+localhost:1128
+
+// install jsx display on sublime
+Cmd + shift + P 
+Package control: install package
+look for babel
+view / syntax / babel
+
+
+
+

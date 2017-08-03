@@ -42,7 +42,7 @@ let save = (datas) => {
                           description: data.description, //'This repo is for demonstration purposes only.',
                           forks: data.forks, // 24,
                           watchers: data.watchers, //7,
-                          owner: { login: data.owner.name, html_url: data.owner.html_url }
+                          owner: { login: data.owner.login, html_url: data.owner.html_url }
                         });
 
         repo.save(function (err, repo) {
@@ -77,9 +77,31 @@ let save = (datas) => {
 
 let read = (callback) => {
   
-  Repo.find(function (err, rows) {
+
+  // Person.
+  // find({ occupation: /host/ }).
+  // where('name.last').equals('Ghost').
+  // where('age').gt(17).lt(66).
+  // where('likes').in(['vaporizing', 'talking']).
+  // limit(10).
+  // sort('-occupation').
+  // select('name occupation').
+  // exec(callback);
+
+
+  Repo.
+  find().
+  limit(25).
+  sort('-watchers').
+  exec(function (err, rows) {
     callback(rows);
-  })
+  });
+  
+
+
+  // Repo.find(function (err, rows) {
+  //   callback(rows);
+  // })
 }
 
 

@@ -21,7 +21,9 @@ app.post('/repos', function (req, res) {
 
 
     helpers.getReposByUsername(username);
+    // helpers.getReposByUsername(function(err, username){
 
+    // });
 
 
 
@@ -36,7 +38,7 @@ app.get('/repos', function (req, res) {
   console.log('GET received!');
   // TODO - your code here!
   database.read(function(data){
-    console.log('GET func: ', data);
+    //console.log('GET func: ', data);
     res.statusCode = 200;
     res.end(JSON.stringify(data));
   });
