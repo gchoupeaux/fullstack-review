@@ -6,7 +6,7 @@ let app = express();
 
 app.set('port', (process.env.PORT || 1128));
 
-app.use(express.static(__dirname + '/../client/dist/index.html'));
+app.use(express.static(__dirname + '/../client/dist/'));
 
 app.post('/repos', function (req, res) {
   //console.log('POST received!');
