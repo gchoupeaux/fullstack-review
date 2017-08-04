@@ -33,6 +33,8 @@ const RepoList = (props) => (
 
 export default RepoList;
 
+{props.repo.map(item => <li>{item.name}</li>)}
+
 
  // <ul>
  //        {props.repos.map(item => (
