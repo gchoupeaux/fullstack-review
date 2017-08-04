@@ -20,7 +20,7 @@ class App extends React.Component {
 
     if (term){
       //send a POST request to /repos
-      $.post('http://localhost:1128/repos',
+      $.post('/repos', //http://localhost:1128
       {
         username: term,
       }
@@ -40,7 +40,7 @@ class App extends React.Component {
     let app = this;
 
     //send a POST request to /repos
-    $.get('http://localhost:1128/repos',
+    $.get('/repos', //http://localhost:1128
     {
       username: 'test',
     },

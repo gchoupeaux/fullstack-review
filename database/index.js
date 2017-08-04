@@ -76,19 +76,6 @@ let save = (datas) => {
 }
 
 let read = (callback) => {
-  
-
-  // Person.
-  // find({ occupation: /host/ }).
-  // where('name.last').equals('Ghost').
-  // where('age').gt(17).lt(66).
-  // where('likes').in(['vaporizing', 'talking']).
-  // limit(10).
-  // sort('-occupation').
-  // select('name occupation').
-  // exec(callback);
-
-
   Repo.
   find().
   limit(25).
@@ -96,14 +83,7 @@ let read = (callback) => {
   exec(function (err, rows) {
     callback(rows);
   });
-  
-
-
-  // Repo.find(function (err, rows) {
-  //   callback(rows);
-  // })
 }
-
 
 module.exports.save = save;
 module.exports.read = read;
